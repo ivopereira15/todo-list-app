@@ -59,3 +59,32 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 For the Icon was use the lucide icons library
+
+To Run the application just type ng serve
+
+## Features
+
+To add a new TODO item, enter text in the input field and click the Add button.
+
+To toggle the completion status, click on the TODO text. Completed items will appear underlined.
+
+To remove a TODO item, click the button with the X icon.
+
+To edit a TODO item, click the Edit icon. You can then save or cancel the changes. If you edit a completed task, it will automatically be marked as uncompleted.
+
+## Structure
+
+src/
+├── app/
+│ ├── store/
+│ │ ├── todo.actions.ts
+│ │ ├── todo.reducer.ts
+│ ├── todo/
+│ │ ├── todo.component.ts
+│ │ ├── todo.component.html
+│ │ ├── todo.component.spec.ts
+│ │ └── todo.component.css
+│ ├── app.component.ts  
+│ ├── app.component.html
+│ ├── app.config.ts  
+├── main.ts

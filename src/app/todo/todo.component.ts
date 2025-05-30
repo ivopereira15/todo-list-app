@@ -7,8 +7,8 @@ import {
   toggleTodo,
   removeTodo,
   editTodo,
-} from '../../store/todo.actions';
-import { Todo } from '../../store/todo.reducer';
+} from '../store/todo.actions';
+import { Todo } from '../store/todo.reducer';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
