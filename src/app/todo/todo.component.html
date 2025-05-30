@@ -1,0 +1,35 @@
+
+<div class="todo">
+<div class="todo-content">
+<h2>TODO List</h2>
+
+<form (submit)="add(); $event.preventDefault()" novalidate>
+  <input [formControl]="todoInput" placeholder="Add a task" />
+  <button type="submit" class="add-button">Add</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let todo of todos$ | async; let i = index" [class.completed]="todo.completed">
+    <span (click)="toggle(i)" style="cursor: pointer;">
+      {{ todo.text }}
+    </span>
+
+    <ng-container *ngIf="editIndex !== i">
+      <lucide-icon name="edit" (click)="startEdit(i, todo.text); $event.stopPropagation()"></lucide-icon>
+
+      <lucide-icon name="trash2" (click)="remove(i); $event.stopPropagation()"></lucide-icon>
+    </ng-container>
+
+    <ng-container *ngIf="editIndex === i">
+      <input [formControl]="editInput" />
+
+      <lucide-icon name="save" (click)="saveEdit(i)"></lucide-icon>
+
+      <lucide-icon name="x" (click)="cancelEdit()"></lucide-icon>
+    </ng-container>
+  </li>
+</ul>
+
+</div>
+</div>
